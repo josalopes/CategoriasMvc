@@ -1,3 +1,4 @@
+using CategoriasMvc.Extensions;
 using CategoriasMvc.Services;
 using System.Net.Http.Headers;
 
@@ -24,7 +25,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.ConfigureExceptionHandler();
+    //app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
